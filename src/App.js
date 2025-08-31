@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Projects from "./components/Projects";
+import About from "./components/About";
+import Footer from "./components/Footer";
+import "./App.css";
 
 function App() {
+  // 1. Tema uchun state
+  const [theme, setTheme] = useState("light");
+
+  // 2. LocalStorage dan eski qiymatni olish
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+  }, []);
+
+  // 3. Tema o‘zgarganda LocalStorage ga yozish
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  // 4. Tema almashtirish funksiyasi
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${theme}`}>
+      {/* Navbar ga tugma jo‘natamiz */}
+      <Navbar toggleTheme={toggleTheme} theme={theme} />
+      <Hero />
+      <Projects />
+      <About />
+      <Footer />
     </div>
   );
 }

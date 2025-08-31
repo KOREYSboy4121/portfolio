@@ -1,38 +1,339 @@
-.App {
+/* ====== Umumiy responsive asos ====== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* elementlarni o‘rtaga tushiradi */
+  padding: 10px 20px;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 40px;
+}
+
+.profile-pic {
+  width: 150px;
+  border-radius: 50%;
+}
+
+/* Projects */
+.projects {
+  padding: 40px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.project-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* ekranda joy yetmasa pastga tushiradi */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.project-card {
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  width: 250px; /* kartalar barobar bo‘lishi uchun */
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.App.dark .project-card {
+  background: #1e1e1e;
+}
+
+/* About & Footer */
+.about, .footer {
+  padding: 40px;
+  text-align: center;
+}
+
+/* ====== RESPONSIVE QOIDALAR ====== */
+
+/* 📱 Kichik ekranlar (telefon: max 600px) */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 20px;
+  }
+
+  .profile-pic {
+    width: 100px;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 300px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* 📱📲 O‘rtacha ekranlar (planshet: max 900px) */
+@media (max-width: 900px) {
+  .navbar ul {
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 30px;
+  }
+
+  .project-grid {
+    gap: 15px;
+  }
+
+  .project-card {
+    width: 45%;
+  }
+}
+
+/* 💻 Katta ekranlar (desktop: 1200px dan katta) */
+@media (min-width: 1200px) {
+  .project-card {
+    width: 300px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
+
+.navbar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  padding: 20px;
+  background: #222;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px;
+}
+
+.profile-pic {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.projects {
+  padding: 40px;
+  text-align: center;
+}
+
+.project-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-card {
+  padding: 20px;
+  background: rgba(73, 73, 73, 0.49);
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+.about, .footer {
+  padding: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* 🔆 Light mode */
+.App.light {
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* 🌙 Dark mode */
+.App.dark {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #222;
+  color: white;
+}
+
+.App.light .navbar {
+  background: #222;
+}
+
+.App.dark .navbar {
+  background: #000;
+}
+
+.theme-btn {
+  padding:5px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 20px;
+  background: #444;
+  color: white;
+}
+
+.App.light .theme-btn {
+  background: #ddd;
+  color: black;
+}
+
+.App.dark .theme-btn {
+  background: #444;
+  color: white;
+}
+
+/* Animatsiya uchun umumiy o‘tish effekti */
+.App {
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* 🔆 Light mode */
+.App.light {
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* 🌙 Dark mode */
+.App.dark {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.App.light .navbar {
+  background: #222;
+  color: white;
+}
+
+.App.dark .navbar {
+  background: #000;
+  color: white;
+}
+
+/* Tema tugmasi */
+.theme-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 18px;
+  background: #444;
+  color: white;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1);
+}
+
+.App.light .theme-btn {
+  background: #ddd;
+  color: black;
+}
+
+.App.dark .theme-btn {
+  background: #444;
+  color: white;
+}
+.works {
+  padding: 40px;
+  text-align: center;
+}
+
+.works h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.work-card {
+  background: var(--bg-card, #f9f9f9);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+}
+
+.work-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.work-card h3 {
+  padding: 10px;
 }
