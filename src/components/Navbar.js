@@ -8,7 +8,6 @@ function Navbar({ toggleTheme, theme }) {
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      {/* Tema tugmasi */}
       <button onClick={toggleTheme} className="theme-btn">
         {theme === "light" ? "🌙" : "☀️"}
       </button>

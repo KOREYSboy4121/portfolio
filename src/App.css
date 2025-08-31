@@ -1,4 +1,4 @@
-/* ====== Umumiy responsive asos ====== */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -6,11 +6,11 @@ body {
   color: #333;
 }
 
-/* Navbar */
+
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* elementlarni o‘rtaga tushiradi */
+  align-items: center;
   padding: 10px 20px;
 }
 
@@ -27,7 +27,7 @@ body {
   text-decoration: none;
 }
 
-/* Hero */
+
 .hero {
   text-align: center;
   padding: 40px;
@@ -38,7 +38,7 @@ body {
   border-radius: 50%;
 }
 
-/* Projects */
+
 .projects {
   padding: 40px;
   text-align: center;
@@ -48,7 +48,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap; /* ekranda joy yetmasa pastga tushiradi */
+  flex-wrap: wrap;
 }
 
 .project-card {
@@ -57,7 +57,7 @@ body {
   border-radius: 10px;
   box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
-  width: 250px; /* kartalar barobar bo‘lishi uchun */
+  width: 250px;
 }
 
 .project-card:hover {
@@ -68,15 +68,12 @@ body {
   background: #1e1e1e;
 }
 
-/* About & Footer */
+
 .about, .footer {
   padding: 40px;
   text-align: center;
 }
 
-/* ====== RESPONSIVE QOIDALAR ====== */
-
-/* 📱 Kichik ekranlar (telefon: max 600px) */
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
@@ -104,7 +101,7 @@ body {
   }
 }
 
-/* 📱📲 O‘rtacha ekranlar (planshet: max 900px) */
+
 @media (max-width: 900px) {
   .navbar ul {
     gap: 15px;
@@ -123,7 +120,7 @@ body {
   }
 }
 
-/* 💻 Katta ekranlar (desktop: 1200px dan katta) */
+
 @media (min-width: 1200px) {
   .project-card {
     width: 300px;
@@ -190,13 +187,13 @@ body {
   text-decoration: none;
 }
 
-/* 🔆 Light mode */
+
 .App.light {
   background: #f8f9fa;
   color: #333;
 }
 
-/* 🌙 Dark mode */
+
 .App.dark {
   background: #121212;
   color: #f1f1f1;
@@ -238,24 +235,24 @@ body {
   color: white;
 }
 
-/* Animatsiya uchun umumiy o‘tish effekti */
+
 .App {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* 🔆 Light mode */
+
 .App.light {
   background: #f8f9fa;
   color: #333;
 }
 
-/* 🌙 Dark mode */
+
 .App.dark {
   background: #121212;
   color: #f1f1f1;
 }
 
-/* Navbar */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -273,7 +270,7 @@ body {
   color: white;
 }
 
-/* Tema tugmasi */
+
 .theme-btn {
   padding: 10px;
   border: none;
