@@ -5,7 +5,9 @@ function Projects() {
     { name: "Taqdir Ko'pto'ki", link: "https://taqdir-koptogi.netlify.app/" },
     { name: "Im Jo Breed clone", link: "https://im-jo-breed.netlify.app/" },
     { name: "Snake Game", link: "snake-game-1bit.netlify.app" },
-    { name: "My SV", link: "/SV.pdf" },
+    { name: "BANAN MARKET", link: "https://github.com/KOREYSboy4121/BANAN-MARKET" },
+    { name: "My SV", link: "https://sv-abdujalil.netlify.app/" },
+
 
   ];
 
